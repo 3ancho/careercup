@@ -1,12 +1,18 @@
 class Q7 {
     public static void main(String [] args) {
-        String s1 = args[0];
-        String s2 = args[1];
-        result = check_rotate(s1, s2);
-        System.out.println(result);
     }
-    public static boolean check_rotate(String s1, String s2) {
-        String s3 = s1 + s1;
-        // 
+
+    public static void zero_out(int [][] a) {
+        ArryList<int> list = new ArrayList<int>();
+        for (int i=0; i<a.length ; i++) {
+            for (int j=0; i<a[0].length ; i++) {
+                if 
+                if (a[i][j] == 0) {
+                    // column = 0
+                    // row = 0
+                }
+            }
+        }
+        
     }
 }
