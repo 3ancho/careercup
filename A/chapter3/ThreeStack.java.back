@@ -1,0 +1,72 @@
+import java.util.*;
+class ThreeStack<T> {
+    int init_size = 10; //single stack len
+    int i0, i1, i2;
+    public Object[] array;
+    public ThreeStack() {
+        array = new T[this.init_size*3];
+        i0 = 0;
+        i1 = i0 + init_size;
+        i2 = i1 + init_size;
+    }
+    public ThreeStack(int init_size) {
+        this.init_size = init_size;
+        array = new T[init_size*3];
+        i0 = 0;
+        i1 = i0 + init_size;
+        i2 = i1 + init_size;
+    }
+
+    public void push(int stack_number, T data_obj) {
+        if (stack_number == 0) {
+            if (i0 < init_size) {
+                array[i0++]=data_obj;
+            } else {
+                System.out.println("i0 is full");
+            }
+        } else if (stack_number == 1) {
+            if (i1 < init_size) {
+                array[i1++]=data_obj;
+            } else {
+                System.out.println("i1 is full");
+            }
+        } else if (stack_number == 2) {
+            if (i2 < init_size-1) {
+                array[i2++]=data_obj;
+            } else {
+                System.out.println("i2 is full");
+            }
+        } else {
+            System.out.println("index error");
+        }
+    }
+    
+    public T pop(int stack_number) {
+        if (stack_number == 0) {
+            if (i0 > 0) {
+                data_obj = array[i0--];
+            } else {
+                System.out.println("i0 is empty");
+                return null;
+            }
+        } else if (stack_number == 1) {
+            if (i1 > 0) {
+                data_obj = array[i1];
+            } else {
+                System.out.println("i1 is empty");
+                return null;
+            }
+        } else if (stack_number == 2) {
+            if (i2 > 0) {
+                data_obj = array[i2--];
+            } else {
+                System.out.println("i2 is empty");
+                return null;
+            }
+        } else {
+            System.out.println("index error");
+        }
+
+        return data_obj;
+    }
+}
